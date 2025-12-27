@@ -21,6 +21,7 @@ body {
   background: #fff;
   border-radius: 30px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .form-box {
@@ -34,9 +35,10 @@ body {
   color: #333;
   text-align: center;
   padding: 40px;
+  z-index: 1;
 }
 
-.form-box.register{
+.form-box.register {
   visibility: hidden;
 }
 
@@ -108,12 +110,54 @@ form {
 }
 
 .social-icons a {
-display: inline-flex;
-padding: 10px;
-border: 2px solid #ccc;
-border-radius: 8px;
-font-size: 24px;
-color: #333;
-text-decoration: none;
-margin: 0 8px;
+  display: inline-flex;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.toggle-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-box::before {
+  content: '';
+  position: absolute;
+  left: -250%;
+  width: 300%;
+  height: 100%;
+  background: #7494ec;
+  border-radius: 150px;
+  z-index: 2;
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  /* background: seagreen; */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.toggle-panel p{
+  margin-bottom: 20px;
+}
+
+.toggle-panel .btn{
+  width: 160px;
+  height: 46px;
+  background: transparent;
+  border: 2px solid #fff;
+  box-shadow: none;
 }
